@@ -33,10 +33,10 @@ function init() {
     });
 
     // Если вы хотите задать неизменяемую точку "откуда", раскомментируйте код ниже.
-    /*routePanelControl.routePanel.state.set({
+    routePanelControl.routePanel.state.set({
         fromEnabled: false,
         from: 'Москва, Льва Толстого 16'
-     });*/
+    });
 
     myMap.controls.add(routePanelControl).add(zoomControl);
 
