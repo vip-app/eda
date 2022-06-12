@@ -36,7 +36,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f8f8ff;
+      background-color: #fcfcff;
     }
 
     .indicator {
@@ -64,14 +64,7 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=3936913384');
-      });
-    }
-  </script>
-  <script>
-    var serviceWorkerVersion = '3936913384';
+    var serviceWorkerVersion = '1981384735';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -132,6 +125,17 @@
     } else {
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
+    }
+  </script>
+  <!-- Removes the loading indicator after 10 seconds-->
+  <script>
+    window.onload = function () {
+      setTimeout(function () {
+        var loadingIndicator = document.getElementById("loading_container");
+        if (loadingIndicator) {
+          loadingIndicator.remove();
+        }
+      }, 10000)
     }
   </script>
 </body>
